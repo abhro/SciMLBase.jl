@@ -204,7 +204,7 @@ end
 """
 $(SIGNATURES)
 
-Define a NonlinearProblem problem from SteadyStateProblem
+Define a `NonlinearProblem` problem from `SteadyStateProblem`
 """
 function NonlinearProblem(prob::AbstractNonlinearProblem)
     NonlinearProblem{isinplace(prob)}(prob.f, prob.u0, prob.p)
@@ -379,7 +379,7 @@ to solve in order solve the system in the optimized split form.
 
 ## Representation
 
-The representation of the SCCNonlinearProblem is via an ordered collection
+The representation of the `SCCNonlinearProblem` is via an ordered collection
 of `NonlinearProblem`s, `probs`, with an attached explicit function for pre-processing
 a cache. This can be interpreted as follows:
 
@@ -641,7 +641,7 @@ function ImmutableNonlinearProblem(f, u0, p = NullParameters(); kwargs...)
 end
 
 """
-Define a ImmutableNonlinearProblem problem from SteadyStateProblem.
+Define a `ImmutableNonlinearProblem` problem from `SteadyStateProblem`.
 """
 function ImmutableNonlinearProblem(prob::AbstractNonlinearProblem)
     return ImmutableNonlinearProblem{SciMLBase.isinplace(prob)}(prob.f, prob.u0, prob.p)
